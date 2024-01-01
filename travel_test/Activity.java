@@ -108,6 +108,7 @@ class ActivityManager {
     		String name = activity.getName();
     		this.activities.add(name);
     		this.activitiesList.add(activity);
+    		destination.addActivity(activity);
     	}
     }
 

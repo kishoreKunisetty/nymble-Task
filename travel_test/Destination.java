@@ -16,6 +16,14 @@ public class Destination {
     public String getName() {
     	return this.name;
     }
+    
+    public List<Activity> getActivites(){
+    	return this.activities;
+    }
+    
+    public void addActivity(Activity activity) {
+    	this.activities.add(activity);
+    }
 
     // Methods to manage activities
     public void printDestinations(MembershipType membershipType, boolean showCapacity, boolean showDescription) {

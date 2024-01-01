@@ -11,9 +11,9 @@ public class Main {
          [TODO] make it more modularised and create multiple scenario's
           for each testcase and formated print statements
         */
-        Passenger kishore = new Passenger("Kishore",123,100,MembershipType.STANDARD, null);
-        Passenger aathira = new Passenger("aathira",123,300,MembershipType.STANDARD, null);
-        Passenger shubham = new Passenger("shubham",123,500,MembershipType.STANDARD, null);
+        Passenger kishore = new Passenger("Kishore",123,100,MembershipType.STANDARD);
+        Passenger aathira = new Passenger("aathira",123,300,MembershipType.STANDARD);
+        Passenger shubham = new Passenger("shubham",123,500,MembershipType.STANDARD);
         // Creating the travel package
         TravelPackage mumbaiToDelhi = new TravelPackage("Mumbai to Delhi Tour", 50);
         TravelPackage mumbaiToBangalore = new TravelPackage("Mumbai to Bangalore Tour", 50);
@@ -36,7 +36,7 @@ public class Main {
         activityManager.addActivity(cityTour, bangalore);
         
         travelManager.addDestination(delhi, mumbaiToDelhi);
-        travelManager.addDestination(bangalore, mumbaiToBangalore);
+//        travelManager.addDestination(bangalore, mumbaiToBangalore);
 
         // Creating a passenger
         travelManager.addPassenger(kishore, mumbaiToDelhi);

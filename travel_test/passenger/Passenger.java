@@ -1,6 +1,8 @@
 package travel_test.passenger;
 
 import travel_test.Activity;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Passenger {
@@ -10,13 +12,13 @@ public class Passenger {
     protected MembershipType membershipType;
     private List<Activity> activities;
 
-    public Passenger(String name, int passengerNumber, double balance, MembershipType membershipType, List<Activity> activities) {
+    public Passenger(String name, int passengerNumber, double balance, MembershipType membershipType) {
         // should we store source and destination?
         this.setName(name);
         this.setPassengerNumber(passengerNumber);
         this.balance = balance;
         this.membershipType = membershipType;
-        this.activities = activities;
+        this.activities = new ArrayList<>();
     }
 
     public void signUpForActivity(Activity activity) {
