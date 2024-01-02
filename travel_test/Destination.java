@@ -33,19 +33,25 @@ public class Destination {
     }
 
     // Methods to manage activities
-    public void printDestinations(MembershipType membershipType, boolean showCapacity, boolean showDescription) {
+    public void printDestinations(Passenger passenger, boolean showCapacity, boolean showDescription) {
     	System.out.println("Destination : " + this.name);
-    	if(this.activities.size() > 0) {
+    	if(this.activities.size() > 0 && passenger != null) {
     		this.activities.forEach( activity -> {
-    			System.out.println("Activity : " + activity.getName());
-    			if(membershipType != null) {
-    				System.out.println("Cost paid : " + this.calculateCost(activity, membershipType));
+    			if(passenger.isActivitySubscribed(activity.getName())) {
+	    			System.out.println("Activity : " + activity.getName());
+	    			MembershipType membershipType = passenger.getMembership();
+	    			if(membershipType != null) {
+	    				System.out.println("Cost paid : " + this.calculateCost(activity, membershipType));
+	    			}
+	    			if(showCapacity) {
+	    				System.out.println("capacity : " + activity.getCapacity());
+	    			}
+	    			if(showDescription) {
+	    				System.out.println("Description : " + activity.getDescription());
+	    			}
     			}
-    			if(showCapacity) {
-    				System.out.println("capacity : " + activity.getCapacity());
-    			}
-    			if(showDescription) {
-    				System.out.println("Description : " + activity.getDescription());
+    			else {
+    				System.out.println("Passenger is not subscribed to " + activity.getName());
     			}
     		});
     	}

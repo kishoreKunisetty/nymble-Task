@@ -96,6 +96,11 @@ public class Passenger {
 	public MembershipType getMembership() {
 		return this.membershipType;
 	}
+	
+	public boolean isActivitySubscribed(String name) {
+	    return this.activities.stream().anyMatch(activity -> activity.getName().equals(name));
+	}
+
 }
 
 

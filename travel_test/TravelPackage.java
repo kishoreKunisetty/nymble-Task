@@ -100,7 +100,7 @@ public class TravelPackage {
 				}
 				if(this.getDestinationList().size() > 0) {
 					this.getDestinationList().forEach(Destination -> {
-						Destination.printDestinations(passenger.getMembership(), false, false);
+						Destination.printDestinations(passenger, false, false);
 					});
 				}
 			});
