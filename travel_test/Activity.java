@@ -110,30 +110,41 @@ class ActivityManager {
     }
 
     public void addActivity(Activity activity, Destination destination) {
-        // Add a new activity
-    	if( this.activities.size()>0 && this.activities.contains(activity.getName())) {
-    		System.out.println("Activity already taken");
+    	try {
+	        // Add a new activity
+	    	if( this.activities.size()>0 && this.activities.contains(activity.getName())) {
+	    		System.out.println("Activity already taken");
+	    	}
+	    	else {
+	    		String name = activity.getName();
+	    		this.activities.add(name);
+	    		this.activitiesList.add(activity);
+	    		destination.addActivity(activity);
+	    	}
     	}
-    	else {
-    		String name = activity.getName();
-    		this.activities.add(name);
-    		this.activitiesList.add(activity);
-    		destination.addActivity(activity);
+    	catch (Exception e) {
+    		System.out.println("Faced an exception while adding an activity " + e);
     	}
     }
 
 	public void printAvailableActivities() {
-        // Print details of all activities that have spaces available
-		System.out.println("### Requirement 4 ####");
-        System.out.println("Activities with space : ");
-    	if(this.activitiesList.size() > 0) {
-    		activitiesList.forEach(activity -> {
-    			if(activity.getSpace() > 0){
-                    System.out.println("Activity : " + activity.getName());
-                    System.out.println("Capacity :" + activity.getCapacity());
-                    System.out.println();
-                }
-    		});
+		try {
+	        // Print details of all activities that have spaces available
+			System.out.println("### Requirement 4 ####");
+	        System.out.println("Activities with space : ");
+	    	if(this.activitiesList.size() > 0) {
+	    		activitiesList.forEach(activity -> {
+	    			if(activity.getSpace() > 0){
+	                    System.out.println("Activity : " + activity.getName());
+	                    System.out.println("Capacity :" + activity.getCapacity());
+	                    System.out.println();
+	                }
+	    		});
+	    	}
+		}
+		catch (Exception e) {
+    		System.out.println("Faced an exception while printing an activity " + e);
     	}
+		
     }
 }

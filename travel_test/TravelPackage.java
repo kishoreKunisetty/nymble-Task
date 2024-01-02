@@ -135,14 +135,20 @@ class TravelPackageManager{
      */
     
     public boolean addPassenger(Passenger passenger, TravelPackage TravelPackage) {
-        /*01 : Check Capacity and ass passenger*/
-        if(TravelPackage.getPassengerCapacity() > 0){
-            reducePassengerCapacity(TravelPackage);
-            addPassengerToTravelPackage( passenger,  TravelPackage);
-            return true;
-        }else{
-            return false;
-        }
+	    try {    
+    		/*01 : Check Capacity and ass passenger*/
+	        if(TravelPackage.getPassengerCapacity() > 0){
+	            reducePassengerCapacity(TravelPackage);
+	            addPassengerToTravelPackage( passenger,  TravelPackage);
+	            return true;
+	        }else{
+	            return false;
+	        }
+	    }
+	    catch (Exception e) {
+    		System.out.println("Faced an exception while adding an activity " + e);
+    		return false;
+    	}
     }
 
     /**
@@ -160,7 +166,13 @@ class TravelPackageManager{
      */
     
     public boolean addDestination(Destination destination, TravelPackage TravelPackage) {
-        return addDestinationToTravelPackage(destination , TravelPackage);
+    	try {
+    		return addDestinationToTravelPackage(destination , TravelPackage);
+    	}
+    	catch (Exception e) {
+    		System.out.println("Faced an exception while adding an destination " + e);
+    		return false;
+    	}
     }
 
     /**

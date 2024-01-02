@@ -29,18 +29,23 @@ public class Passenger {
     }
 
     public void signUpForActivity(Activity activity) {
-        double cost = calculateCost(activity);
-        int initial_capacity = activity.getCapacity();
-        if (this.balance >= cost) {
-        	// passenger can buy activity
-            this.balance -= cost;
-            activity.setCapacity(initial_capacity - 1);
-            // Additional logic for signing up
-            this.activities.add(activity);
-        } else {
-            // Handle insufficient balance
-        	System.out.println("insufficient balance to buy activity");
-        }
+	   try {
+    		double cost = calculateCost(activity);
+	        int initial_capacity = activity.getCapacity();
+	        if (this.balance >= cost) {
+	        	// passenger can buy activity
+	            this.balance -= cost;
+	            activity.setCapacity(initial_capacity - 1);
+	            // Additional logic for signing up
+	            this.activities.add(activity);
+	        } else {
+	            // Handle insufficient balance
+	        	System.out.println("insufficient balance to buy activity");
+	        }
+	   }
+	   catch (Exception e) {
+	   		System.out.println("Faced an exception while signing an activity " + e);
+	   	}
     }
 
     public double calculateCost(Activity activity) {
