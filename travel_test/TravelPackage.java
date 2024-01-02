@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import travel_test.passenger.*;
 import java.util.List;
 
+/**
+ * Implementation class for TravelPackage
+ * @author  Kishore Kunisetty
+ * @version 1.0
+ * @since   2023-12-31
+ */
 public class TravelPackage {
     private String name;
     private int passengerCapacity;
@@ -17,7 +23,7 @@ public class TravelPackage {
         this.passengers = new ArrayList<>();
     }
 
-    // Methods for managing itinerary, passengers, etc.
+    // Getters and Setters for managing itinerary, passengers, etc.
     public int getPassengerCapacity(){
         return this.passengerCapacity;
     }
@@ -27,23 +33,19 @@ public class TravelPackage {
     }
 
 	public List<Destination> getDestinationList() {
-		// TODO Auto-generated method stub
 		return this.itinerary;
 	}
 
 	public void setDestinationList(List<Destination> arrayList) {
-		// TODO Auto-generated method stub
 		this.itinerary = arrayList;
 		
 	}
 
 	public List<Passenger> getPassengerList() {
-		// TODO Auto-generated method stub
 		return this.passengers;
 	}
 
 	public void setPassengerList(List<Passenger> arrayList) {
-		// TODO Auto-generated method stub
 		this.passengers = arrayList;
 		
 	}
@@ -63,29 +65,26 @@ public class TravelPackage {
 	}
 
 	public void printPassengerList() {
-		// TODO Auto-generated method stub
-
-	        System.out.println();
-	        System.out.println("## Requirement 2 ##");
-	        System.out.println("Package Name 01 : " + this.getName());
-	        System.out.println("Passenger Capacity : " + this.getPassengerCapacity());
-	        // if condition print only if passengers are there
-	        if (this.passengers.size() == 0) {
-	        	System.out.println("No passengers are added");
-	        }
-	        else {
-	        	System.out.println("Number of passenger currently enrolled in : " + this.passengers.size());
-		        System.out.println("Details of passenger currently enrolled in : ");
-		        this.getPassengerList().forEach(passenger -> {
-		            System.out.println("Passenger Name :" + passenger.getName());
-		            System.out.println("Passenger Num : " + passenger.getPassengerNumber());
-		        });
-	        }
+        System.out.println();
+        System.out.println("## Requirement 2 ##");
+        System.out.println("Package Name 01 : " + this.getName());
+        System.out.println("Passenger Capacity : " + this.getPassengerCapacity());
+        // if condition print only if passengers are there
+        if (this.passengers.size() == 0) {
+        	System.out.println("No passengers are added");
+        }
+        else {
+        	System.out.println("Number of passenger currently enrolled in : " + this.passengers.size());
+	        System.out.println("Details of passenger currently enrolled in : ");
+	        this.getPassengerList().forEach(passenger -> {
+	            System.out.println("Passenger Name :" + passenger.getName());
+	            System.out.println("Passenger Num : " + passenger.getPassengerNumber());
+	        });
+        }
 		
 	}
 
 	public void printPassengerDetails() {
-		// TODO Auto-generated method stub
 		System.out.println();
         System.out.println("#### Requirement 3 ####");
         System.out.println("Passenger Details ");
@@ -110,31 +109,29 @@ public class TravelPackage {
 	}
 
 	public void printItinery() {
-		// TODO Auto-generated method stub
 		System.out.println();
         System.out.println("## Requirement 1 ##");
         System.out.println("Package Name : " + this.getName());
         System.out.println("Destinations And Activities Present : " );
-        this
-                .getDestinationList()
-                .forEach(destination -> {
-                    System.out.println(destination.getName());
-                    destination.printDestinations(null, true, true);
-                });
+        this.getDestinationList()
+            .forEach(destination -> {
+                System.out.println(destination.getName());
+                destination.printDestinations(null, true, true);
+            });
 	}
 }
 
 /**
  * Implementation class or Service class for TravelPackage
- * @author  Vatsal Gupta
+ * @author  Kishore Kunisetty
  * @version 1.0
- * @since   2023-07-01
+ * @since   2023-12-31
  */
 class TravelPackageManager{
     /**
      * @param passenger
      * @param TravelPackage
-     * @return
+     * @return boolean
      */
     
     public boolean addPassenger(Passenger passenger, TravelPackage TravelPackage) {
@@ -159,7 +156,7 @@ class TravelPackageManager{
     /**
      * @param destination
      * @param TravelPackage
-     * @return
+     * @return boolean
      */
     
     public boolean addDestination(Destination destination, TravelPackage TravelPackage) {
@@ -170,7 +167,7 @@ class TravelPackageManager{
      *
      * @param destination
      * @param TravelPackage
-     * @return
+     * @return 
      */
     private boolean addDestinationToTravelPackage(Destination destination, TravelPackage TravelPackage) {
         if(TravelPackage.getDestinationList() == null)

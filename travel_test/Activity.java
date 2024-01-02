@@ -2,6 +2,13 @@ package travel_test;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * This class contains all the data about activities, etc.
+ * @author  Kishore Kunisetty
+ * @version 1.0
+ * @since   2023-12-31 
+ */
 public class Activity {
     private String name;
     private String description;
@@ -85,11 +92,14 @@ public class Activity {
 	}
 }
 
-class ActivityManager {
-    /*
-    what can be managed by activity manager?
 
-    */
+/**
+ * This class contains all the managing functions required to modify activities etc.
+ * @author  Kishore Kunisetty
+ * @version 1.0
+ * @since   2023-12-31 
+ */
+class ActivityManager {
     private List<String> activities;
     private List<Activity> activitiesList;
 
@@ -120,23 +130,10 @@ class ActivityManager {
     		activitiesList.forEach(activity -> {
     			if(activity.getSpace() > 0){
                     System.out.println("Activity : " + activity.getName());
-                    System.out.println("Capacity :" + activity.getSpace());
+                    System.out.println("Capacity :" + activity.getCapacity());
+                    System.out.println();
                 }
     		});
     	}
     }
-
-	/**
-	 * @return the activities
-	 */
-//	public List<Activity> getActivities() {
-//		return activities;
-//	}
-
-	/**
-	 * @param activities the activities to set
-	 */
-//	public void setActivities(List<Activity> activities) {
-//		this.activities = activities;
-//	}
 }

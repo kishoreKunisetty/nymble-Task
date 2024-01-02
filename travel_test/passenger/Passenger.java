@@ -5,6 +5,13 @@ import travel_test.Activity;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * This class contains all the data about Passenger, etc.
+ * @author  Kishore Kunisetty
+ * @version 1.0
+ * @since   2023-12-31 
+ */
 public class Passenger {
     private String name;
     private int passengerNumber;

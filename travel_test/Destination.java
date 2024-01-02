@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import travel_test.passenger.*;
 import java.util.List;
 
+
+/**
+ * Implementation class for Destination
+ * @author  Kishore Kunisetty
+ * @version 1.0
+ * @since   2023-12-31
+ */
 public class Destination {
     private String name;
     private List<Activity> activities;
@@ -35,7 +42,7 @@ public class Destination {
     				System.out.println("Cost paid : " + this.calculateCost(activity, membershipType));
     			}
     			if(showCapacity) {
-    				System.out.println("capacity : " + activity.getSpace());
+    				System.out.println("capacity : " + activity.getCapacity());
     			}
     			if(showDescription) {
     				System.out.println("Description : " + activity.getDescription());
