@@ -12,7 +12,7 @@ The Travel Package Management System is a Java-based application designed for tr
 
 ## System Requirements
 - Java JDK 11 or higher.
-- JUnit 5 for running unit tests.
+- any java IDE is suggested
 
 ## Task requirements
 
@@ -38,7 +38,7 @@ The Travel Package Management System is a Java-based application designed for tr
    ```
 2. Navigate to the project directory.
    ```bash
-   cd travel-package-management-system
+   cd nymble-Task
    ```
 
 ## Usage
